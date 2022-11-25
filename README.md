@@ -1,25 +1,22 @@
-# Windows | Chendo Version ![Status badge](https://img.shields.io/badge/status-in%70progress-green)
+# Windows | Chendo Version
 
-✨ Versión de Windows 10 con React, creado con mucho corazón .
+✨ Oschen - windows 10 - @chendodev.
 
 
 ## 🚀 Instalación
 1. Clona este proyecto.
 2. Ve a la carpeta del proyecto
-`cd windows`
+`cd oschen`
 3. Instala las dependencias
 `npm install`
-4. Corre el servidor Api Fake
-`npm run fake-api`
-5. Corre el ambiente local
+4. Corre el ambiente local
 `npm run start`
 
 ## 🎶 Base de Datos Windows
-Esstamos simulando una api con json-server
+No usa base de datos
 
 ## 🧾 License
 The MIT License (MIT)
 
-## ✨ Agradecimientos
-* Agradezco a todas las personas que confiaron en mi y que siguen creyendo no los defraudaré.
-* Esto recién está empezando.
+## ✨ Thanks
+* I thank all the people who trust me, I will not disappoint them.
