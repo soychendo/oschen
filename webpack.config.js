@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 
@@ -52,9 +53,6 @@ module.exports = {
       {
         test: /\.png|jpg|svg|jpeg|webp$/,
         type: 'asset/resource',
-        generator: {
-          filename: './public/assets[hash][ext]',
-        }
       }
     ]
   },
@@ -64,7 +62,19 @@ module.exports = {
       filename: './index.html',
       inject: 'body'
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+          {
+              from: path.resolve(__dirname, "public", "assets"),
+              to: "assets"
+          },
+          {
+            from: path.resolve(__dirname, "public", "audio"),
+            to: "audio"
+        }
+      ]
+  }),
   ],
   devServer: {
     historyApiFallback: true
