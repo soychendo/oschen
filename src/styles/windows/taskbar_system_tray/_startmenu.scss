@@ -1,0 +1,181 @@
+@use '../../base/mixins' as m; // Import Mixins 
+/* <---- Init Start Menu ----> */
+#StartMenu {
+    box-shadow: 0 0 12px 0 $rgba_black4;
+    backdrop-filter: blur(5px);
+    background-color: $rgba_gray8;
+    box-shadow: $box-shadow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 1.7em;
+    padding: 1em;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 620px;
+        height: 420px;
+    }
+    @include m.tablet {
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 240px;
+            height: 420px;
+        }
+    };
+}
+/* <---- Grid User ---- > */
+.GridUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50px;
+    z-index: 5;
+
+    .icon_open {
+        padding: .7em 1em;
+        border: 1.5px solid transparent;
+
+        &:hover {
+            background-color: $rgba_white2;
+            border: 1.5px solid $rgba_white2;
+            padding: .7em 1em;
+        }
+        img {
+            width: 17px;
+            height: 17px;
+        }
+        .start {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+    .icon_config .Chendo {
+        border-radius: 50%;
+    }
+    .icon_config span {
+        position: absolute;
+        padding-left: 3em;
+        z-index: 4;
+    }
+}
+/* <---- Visibility START JS ---- */
+.openUser {
+    backdrop-filter: blur(12px);
+    height: 100%;
+    inset: 0;
+    background-color: $rgba_gray8;
+    transition: all .1s ease-in;
+    width: 230px;
+}
+.openUser:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1px $rgba_gray3;
+    filter: blur(1px);
+}
+/* <---- End Visibility START ---- */
+/* <---- End Grid User ---- > */
+/* <---- Grid Programs ---- > */
+.GridPrograms {
+    width: 100%;
+    padding-left: 2.5em;
+    padding-right: .4em;
+    overflow-y: auto;
+    .containerIcon {
+        position: relative;
+        line-height: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        margin: 0.5rem 0;
+        z-index: 4;
+        height: 40px;
+    }
+    .letter {
+        display: flex;
+        font-size: .7em;
+        margin: 2em 0;
+    }
+    .icon_open img {
+        position: relative;
+        z-index: 2;
+        width: 23px;
+        height: 23px;
+    }
+    .icon_open span {
+        font-size: .7em;
+    }
+    .box {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        z-index: 5;
+    }
+    .box:hover {
+        background: transparent;
+        border: 1px solid transparent;
+    }
+}
+.icon_open {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: .3em;
+    gap: 1em;
+    z-index: 7;
+}
+/* <----End Grid Programs ---- > */
+/* <---- Grid Application ---- > */
+.GridApplications {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: fit-content;
+    padding-left: .4em;
+
+    img {
+        width: 45px;
+        height: 45px;
+    }
+    span {
+        position: absolute;
+        font-size: .7em;
+        bottom: .3em;
+        left: .6em;
+    }
+}
+.GridApplications .google, .photos, .mail, .store {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $rgba_extended;
+    outline: 1.5px groove $rgba_white2;
+    position: relative;
+    width: 95px;
+    height: 95px;
+    margin: .2em;
+}
+.GridApplications .google:hover, 
+.photos:hover, 
+.mail:hover, 
+.store:hover {
+    background-color: $rgba_white2;
+    outline: 1.5px groove $rgba_white5;
+}
+/* <---- End Grid Application ---- > */
+/* <---- End Start Menu ----> */
+/* <---- End Logo Windows & Start Menu ----> */

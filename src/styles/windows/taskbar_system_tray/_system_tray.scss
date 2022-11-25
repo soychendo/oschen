@@ -1,0 +1,31 @@
+@use '../../base/mixins' as m; // Import Mixins 
+/* <---- System Tray ----> */
+.system_tray {
+
+    .systems {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        column-gap: .2em;
+
+        img {
+            width: 17px;
+            height: 17px;
+        }
+        span {
+            text-transform: uppercase;
+            font-size: .7em;
+        }
+    }
+    @include m.tablet {
+        .systems {
+            @include m.displayFlex(flex-end);
+            padding-right: 1em;
+        }
+    }
+}
+.show_hidden_icons .show-icons {
+    width: 13px;
+    height: 13px;
+}
+/* <---- End System Tray ----> */
