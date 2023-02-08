@@ -2,11 +2,11 @@
 /*<----Init Explorer---->*/
 #Explorer {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    width: 550px;
+    left: 50%;
+    margin-left: -275px;
+    top: 50%;
+    margin-top: -275px;
 
     li img {
         width: 17px;
@@ -32,6 +32,13 @@
     flex-wrap: wrap;
 }
 @include m.tablet {
+    #Explorer {
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+        top: 25%;
+        margin-top: -150px;
+    }
     .container_explorer {
         width: 300px;
     }

@@ -1,30 +1,31 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
 
-import TaskbarExtended from '@components/taskbar/IconApplication/TaskbarExtended';
-import application from '@public/database/application';
-
 const IconApplication = () => {
 
-  const { openExplorer, explorer, outStartMenu } = useContext(GlobalContext);
+  const { handleExplorer, handleCalc, outStartMenu } = useContext(GlobalContext);
 
   return (
     <>
-    {application.map(icon => ( 
-    <div key={icon.name} className="icon_application">
+    
+    <div className="icon_application">
       <ul>
       <li onMouseDown={outStartMenu}>
-        <a onClick={openExplorer} className="btn-show" data-id={icon.id}>
-          <img className="btn-show" src={`assets/pro/${icon.tumb}`} alt={icon.name} />
+        <a onClick={handleExplorer} className="btn-show explorer_icon">
+          <img className="btn-show explorer_icon" src="assets/pro/explorer.svg" alt="explorer icon" />
         </a>
-        {
-        explorer
-          ? <TaskbarExtended name={icon.name} imagen={icon.imagen} id={icon.id} /> : null
-        }
       </li>
       </ul>
     </div>
-    ))}
+     <div className="icon_application">
+     <ul>
+     <li onMouseDown={outStartMenu}>
+       <a onClick={handleCalc} className="btn-show calc_icon">
+         <img className="btn-show calc_icon" src="assets/pro/calculator.svg" alt="calc icon" />
+       </a>
+     </li>
+     </ul>
+   </div>
     </>
     
   );

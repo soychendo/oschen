@@ -10,16 +10,14 @@
     Website: https://chendo.dev
 
 -----------------------------------------------------------------------------------*/
-function touring() {
-  const parentPositionExplorer = document.querySelectorAll('.container_explorer');
-  const parentPositionAudio = document.querySelectorAll('.audio');
-  parentPositionExplorer.forEach(change => change.style.position = 'absolute');
-  parentPositionAudio.forEach(change => change.style.position = 'absolute');
+function touring(container) {
+  const parentPosition = document.querySelectorAll(container);
+  parentPosition.forEach(change => change.style.position = 'absolute');
 }
-const OschenMouseDown = (e) => {
+const OschenMouseDown = (e, containerRef) => {
 
   let target = e.target
-  if(!target.classList.contains('audio') && !target.classList.contains('container_explorer') ) return;
+  if(!target.classList.contains(containerRef)) return;
 
   window.addEventListener('mousemove', mousemove);
   window.addEventListener('mouseup', mouseup);

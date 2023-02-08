@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
-import OschenMouseDown from '@utils/OschenMouseDown';
+import OschenMouseDown, { touring } from '@utils/OschenMouseDown';
 
 import { useZindex } from '@hooks/useZindex';
 
@@ -12,15 +12,20 @@ const Audio = () => {
   const { active, changeZindex } = useZindex(ca)
 
   const { 
-    selectedSong, 
+    state,
     closePlayer, 
     audioRef, 
     onPlay, 
     onToggle,
     autoPlay,
     volume,
-    isPlaying 
+
   } = useContext(GlobalContext);
+
+  const handleContainer = (e) => {
+    OschenMouseDown(e, "audio");
+    touring(".audio");
+  }
 
   useEffect(() => {
     changeZindex()
@@ -29,7 +34,7 @@ const Audio = () => {
   return (
     <div
     onMouseMove={changeZindex()}
-    onMouseDown={OschenMouseDown}
+    onMouseDown={(e) => handleContainer(e)}
     onLoad={() => onPlay()} 
     onEnded={autoPlay} 
     id="Audio"
@@ -41,12 +46,12 @@ const Audio = () => {
       </div>
       <div className="AudioContainer">
         <div className="AudioDescription">
-          {selectedSong ? (
+          {state.selectedSong ? (
             <>
             <div className="AlbumImg">
               <img 
-                src={`assets/audioseven/album/${selectedSong.album}`} 
-                alt={selectedSong.name} 
+                src={`assets/audioseven/album/${state.selectedSong.album}`} 
+                alt={state.selectedSong.name} 
                 style={{pointerEvents: 'none'}}
               />
             </div>
@@ -62,9 +67,9 @@ const Audio = () => {
             hspace="10px" 
             vspace="5px"
             >
-                <p className="AudioText">{selectedSong.name}</p>
+                <p className="AudioText">{state.selectedSong.name}</p>
             </marquee>
-            <audio ref={audioRef} src={`audio/${selectedSong.mp3}`}></audio>
+            <audio ref={audioRef} src={`audio/${state.selectedSong.mp3}`}></audio>
             </>
           ) : (
             <p className="AudioText">Add To Song</p> 
@@ -74,7 +79,7 @@ const Audio = () => {
       <div id="play">
         <div 
           onClick={onToggle} 
-          className={isPlaying ? 'btn-stop' : 'btn-play'} 
+          className={state.isPlaying ? 'btn-stop' : 'btn-play'} 
           alt="play">
         </div>  
       </div>

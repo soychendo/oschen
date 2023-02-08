@@ -23,8 +23,10 @@ const GlobalProvider = ({ children }) => {
     activeMenu: false,
   }
   const [state, dispatch] = useReducer(dataReducer, initialState);
-  const [explorador, setExplorador] = useState(false);
+  const [explorer, setExplorer] = useState(false);
+  const [calc, setCalc] = useState(false);
 
+  // Grid Programs ---->
   const appRef = useRef([]);
   const containerRef = useRef([]);
 
@@ -65,12 +67,19 @@ const GlobalProvider = ({ children }) => {
   const closePlayer = () => {
     dispatch({type: CLOSE_PLAYER});
   }
-  // State Explorer 
-  const openExplorer = () => {
-    setExplorador(!explorador);
+  // State App ---------->
+  const handleExplorer = () => {
+   setExplorer(!explorer)
   }
+  const handleCalc = () => {
+    setCalc(!calc)
+  }
+  // ------------------------------------>
   const closeExplorer = () => {
-    setExplorador(false);
+    setExplorer(false);
+  }
+  const closeCalc = () => {
+    setCalc(false);
   }
   // State Start Menu 
   const toogleMenu = () => {
@@ -85,29 +94,40 @@ const GlobalProvider = ({ children }) => {
     }) 
   }
 
+  const playerContext = {
+    state,
+    onPlay,
+    onPause,
+    autoPlay,
+    volume,
+    getAudio,
+  }
+  const valueContext = {
+    data: state.data,
+    toogleMenu,
+    outStartMenu,
+    onToggle,
+    closePlayer,
+    closeExplorer,
+    closeCalc,
+    handleExplorer,
+    handleCalc,
+    explorer,
+    calc
+  }
+  const useRefContext = {
+    appRef,
+    containerRef,
+    audioRef
+  }
+  const globalContext = {
+    ...playerContext,
+    ...valueContext,
+    ...useRefContext,
+  }
+
   return(
-    <GlobalContext.Provider value={{
-      data: state.data,
-      selectedSong: state.selectedSong,
-      activeSong: state.activeSong,
-      isPlaying: state.isPlaying,
-      explorer: explorador,
-      activeMenu: state.activeMenu,
-      toogleMenu,
-      outStartMenu,
-      onPlay,
-      onPause,
-      onToggle,
-      audioRef,
-      containerRef,
-      appRef,
-      autoPlay,
-      volume,
-      closePlayer,
-      getAudio,
-      closeExplorer,
-      openExplorer,
-    }}>
+    <GlobalContext.Provider value={globalContext}>
       {children}
     </GlobalContext.Provider>
   )

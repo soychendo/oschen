@@ -12,6 +12,7 @@
   right: 1rem;
   width: 350px;
   height: 100px;
+  z-index: 1;
 }
 .AudioContainer {
   position: relative;

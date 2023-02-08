@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import OschenMouseDown from '@utils/OschenMouseDown';
+import OschenMouseDown, { touring }  from '@utils/OschenMouseDown';
 import { ExplorerContext } from '@context/ExplorerContext';
 
 import ThisPc from '@components/explorer/explorerInfo/ThisPc';
@@ -17,7 +17,6 @@ import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
 
 import ExplorerList from '@components/explorer/ExplorerList/ExplorerList';
 import useMediaQuery from '@hooks/useMediaQuery';
-import { touring } from '@utils/OschenMouseDown';
 
 import { useZindex } from '@hooks/useZindex';
 
@@ -34,19 +33,23 @@ const Explorer = () => {
     downloads,
     songs,
     pictures,
-    videos 
+    videos,
   } = useContext(ExplorerContext);
+  
+  const handleContainer = (e) => {
+    OschenMouseDown(e, "container_explorer");
+    touring(".container_explorer");
+  }
 
   return (
     <>
     <div 
-    onMouseDown={OschenMouseDown}
-    onLoad={touring} 
+    onMouseDown={e => handleContainer(e)}
     id="Explorer" 
     data-id="1" 
     className="explorer"
     >
-    <div onMouseDown={changeZindex} style={active}  className="container_explorer ce">
+    <div onMouseDown={changeZindex} style={active} className="container_explorer ce">
       <DescriptionClose />
       <MenuManage />
       <InputExplorer />

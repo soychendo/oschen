@@ -1,17 +1,23 @@
+@use '../../base/mixins' as m; // Import Mixins 
 /* <!---- Calculator Windows ----> */
 #chendo_calc {
     position: absolute;
-    top: 5em;
+    width: 300px;
     left: 50%;
-    transform: translateX(-50%);
-    right: 0;
-    height: auto;
-    display: none;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -150px;
+}
+@include m.tablet {
+    #chendo_calc {
+        top: 25%;
+    }
 }
 .calculators {
     background-color: $calc_rgba;
     box-shadow: 3px 3px 10px $rgba_black3;
     border: 1px solid #3D3F40;
+    position: relative;
     padding: .2em;
     width: 300px;
 

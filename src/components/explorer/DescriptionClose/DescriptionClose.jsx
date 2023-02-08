@@ -23,7 +23,7 @@ const DescriptionClose = () => {
       <div className="mmc">
         <img className="minimize" src={minimize} alt="minimize" />
         <img className="maximize" src={maximize} alt="maximize" />
-        <img onClick={() => closeExplorer()} className="close" src={close} alt="close" />
+        <img onClick={closeExplorer} className="close" src={close} alt="close" />
       </div>
   </div>
   );

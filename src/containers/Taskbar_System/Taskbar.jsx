@@ -8,7 +8,7 @@ import {StartMenu} from '@containers/Taskbar_System/StartMenu';
 
 const Taskbar = () => {
 
-  const { activeMenu } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
 
   return (
     <div id="taskbar_system_tray" className="os_system">
@@ -22,7 +22,7 @@ const Taskbar = () => {
       <div className="system_tray">
         <Systems />
       </div>
-      { activeMenu  ? <StartMenu /> : null}
+      { state.activeMenu  ? <StartMenu /> : null}
     </div>
   );
 }

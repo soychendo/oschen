@@ -8,20 +8,23 @@ import { GlobalContext } from '@context/GlobalContext';
 import { ExplorerProvider } from '@context/ExplorerContext';
 import OsMenu from '@components/OsMenu/OsMenu';
 
-import { contextMenuCustom } from '../../utils/OsContextMenu';
-
+import { contextMenuCustom } from '@utils/OsContextMenu';
+import Calc from '@containers/Calc/Calc';
 
 const Oschen = () => {
 
-  const { explorer, activeSong } = useContext(GlobalContext);
+  
+
+  const { explorer, state, calc } = useContext(GlobalContext);
 
   return (
     <div onLoad={contextMenuCustom} id="Oschen">
       <ExplorerProvider>
-        { explorer ? <Explorer /> : null}
+        { explorer ? <Explorer /> : null }
       </ExplorerProvider>
       <HeroImage />
-      { activeSong ? <Audio /> : null }
+       { calc ? <Calc /> : null }
+      { state.activeSong ? <Audio /> : null }
       <Taskbar /> 
       <OsMenu />
     </div>

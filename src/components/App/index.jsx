@@ -3,7 +3,7 @@ import Oschen from '@components/App/Oschen';
 import { GlobalProvider } from '@context/GlobalContext';
 
 const App = () => {
-
+           
   return (
     <>
     <GlobalProvider>
