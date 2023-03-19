@@ -15,10 +15,16 @@
     }
 
     .items_explorer {
+        display: flex;
+        justify-content: space-between;
         background-color: #333333;
-        padding: .3em;
-        padding-left: .5em;
+        padding: 4px 14px;
         font-size: .7em;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
     }
 }
 .container_explorer {

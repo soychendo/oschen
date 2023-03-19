@@ -1,0 +1,264 @@
+{
+  "explorer": [
+    {
+      "id": 1,
+      "name": "Pc",
+      "cover": "assets/explorer/pc.svg"
+    },
+    {
+      "id": 2,
+      "name": "Desktop",
+      "cover": "assets/explorer/desktop.svg"
+    },
+    {
+      "id": 3,
+      "name": "Documents",
+      "cover": "assets/explorer/documents.svg"
+    },
+    {
+      "id": 4,
+      "name": "Downloads",
+      "cover": "assets/explorer/downloads.svg"
+    },
+    {
+      "id": 5,
+      "name": "Music",
+      "cover": "assets/explorer/music.svg"
+    },
+    {
+      "id": 6,
+      "name": "Pictures",
+      "cover": "assets/explorer/pictures.svg"
+    },
+    {
+      "id": 7,
+      "name": "Video",
+      "cover": "assets/explorer/video.svg"
+    }
+  ],
+  "explorerList": [
+    {
+      "id": 24,
+      "explorerId": 1,
+      "content": [
+        {
+          "name": "Desktop",
+          "src": "assets/explorer/folder/desktop.svg"
+        },
+        {
+          "name": "Documents",
+          "src": "assets/explorer/folder/documents.svg"
+        },
+        {
+          "name": "Downloads",
+          "src": "assets/explorer/folder/downloads.svg"
+        },
+        {
+          "name": "Music",
+          "src": "assets/explorer/folder/music.svg"
+        },
+        {
+          "name": "Picture",
+          "src": "assets/explorer/folder/pictures.svg"
+        },
+        {
+          "name": "Video",
+          "src": "assets/explorer/folder/video.svg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "explorerId": 2,
+      "content": [
+        {
+          "name": "ChendoDev",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Developer",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "JavaScript - React",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "ChatBot",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "PHP - MySQL",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Node - Firebase",
+          "src": "assets/content/default.svg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "explorerId": 3,
+      "content": [
+        {
+          "name": "Ethical Hacking",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "JavaScript History",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "PHP - Documents",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "JWT - Security",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "GraphQL - API",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Docker - Debian Image",
+          "src": "assets/content/default.svg"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "explorerId": 4,
+      "content": [
+        {
+          "name": "Components Redux",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Mathematical and Physical",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Hack Music",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Entertainment Movies Dev",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "FullStack Node & GraphQL",
+          "src": "assets/content/default.svg"
+        },
+        {
+          "name": "Custom Hooks - React",
+          "src": "assets/content/default.svg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "explorerId": 5,
+      "content": [
+        {
+          "id": 1,
+          "name": "I Will Be Rain - Bruno Mars",
+          "src": "assets/content/doc_music.svg",
+          "album": "bruno-mars.jpg",
+          "mp3": "audio/it-will-rain.mp3"
+        },
+        {
+          "id": 2,
+          "name": "More Than Words - Extreme",
+          "src": "assets/content/doc_music.svg",
+          "album": "extreme.jpg",
+          "mp3": "audio/more-than-words.mp3"
+        },
+        {
+          "id": 3,
+          "name": "Let It Be - The Beatles",
+          "src": "assets/content/doc_music.svg",
+          "album": "the-beatles.jpg",
+          "mp3": "audio/let-it-be.mp3"
+        },
+        {
+          "id": 4,
+          "name": "Foreigner | I Want to Know What Love Is",
+          "src": "assets/content/doc_music.svg",
+          "album": "foreigner",
+          "mp3": "audio/i-want-to.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Tears In Heaven - Boyce Avenue",
+          "src": "assets/content/doc_music.svg",
+          "album": "boyce-avenue",
+          "mp3": "audio/tears-in-heaven.mp3"
+        },
+        {
+          "id": 6,
+          "name": "Bee Gees - How Deep is Your Love",
+          "src": "assets/content/doc_music.svg",
+          "album": "bee-gees",
+          "mp3": "audio/how-deep-is-your-love.mp3"
+        },
+        {
+          "id": 7,
+          "name": "AeroSmith - Crazy",
+          "src": "assets/content/doc_music.svg",
+          "album": "aerosmith",
+          "mp3": "audio/crazy.mp3"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "explorerId": 6,
+      "content": [
+        {
+          "name": "Bruno Mars",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "Extreme",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "The Beatles",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "Foreigner",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "Boyce Avenue",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "Bee Gees",
+          "src": "assets/content/doc_image.svg"
+        },
+        {
+          "name": "AeroSmith",
+          "src": "assets/content/doc_image.svg"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "explorerId": 7,
+      "content": [
+        {
+          "name": "The Local Storage",
+          "src": "assets/content/doc_video.svg"
+        },
+        {
+          "name": "Single Page Application",
+          "src": "assets/content/doc_video.svg"
+        }
+      ]
+    }
+  ]
+}

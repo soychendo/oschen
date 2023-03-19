@@ -23,15 +23,14 @@ $container_pc: #202020;
 
 // calculator
 $equal: #BA8D2C;
-
 // Rgba Global
-$rgba_gray8: rgba(33, 33, 33, 0.8);;
+$rgba_gray8: hsla(0, 0%, 13%, 95%);
 $rgba_gray7: rgba(31, 31, 31, .8);
 $rgba_gray3: rgba(25, 25, 25, .3);
 $rgba_gray07: rgba(26, 26, 26, 0.8);
 $active_pc: rgba(0, 169, 248, .4);
 $calc_rgba: rgba(40, 40, 40, .97);
-$box-shadow: rgb(26 26 26 / 50%) 3px 0px 10px 3px;
+$box-shadow: 3px 0 10px 3px hsla(0, 0%, 10%, 50%);
 
 $rgba_black7: rgba(0, 0, 0, .8);
 $rgba_black4: rgba(0, 0, 0, 50%);
