@@ -1,14 +1,15 @@
-import React, {createContext, useReducer, useRef, useState} from 'react';
-import { dataReducer } from '@context/dataReducer';
-import { database } from '@public/database/database';
+import React, {createContext, useReducer, useRef} from 'react';
+import { globalReducer } from '@context/globalReducer';
+import api from '../../database/db.json';
 
 import { 
-  GET_SONG,
   CLOSE_PLAYER, 
   ON_PLAYER, 
+  GET_SONG,
   OFF_PLAYER,
   START_MENU,
-  OUT_START_MENU,
+  CALCULATOR,
+  EXPLORER
 } from '@context/types';
 
 const GlobalContext = createContext();
@@ -16,27 +17,19 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
   const initialState = {
-    data: [],
     selectedSong: null,
     activeSong: false,
     isPlaying: false,
     activeMenu: false,
+    calculator: false,
+    explorer: false,
   }
-  const [state, dispatch] = useReducer(dataReducer, initialState);
-  const [explorer, setExplorer] = useState(false);
-  const [calc, setCalc] = useState(false);
+  const [state, dispatch] = useReducer(globalReducer, initialState);
 
   // Grid Programs ---->
   const appRef = useRef([]);
   const containerRef = useRef([]);
 
-  const getAudio = (id) => {
-    database.music.forEach(song => {
-      if(song.id == id) {
-        dispatch({ type: GET_SONG, payload: song })
-      }
-    })
-  }
   const audioRef = useRef();
 
   const onPlay = () => {
@@ -68,30 +61,29 @@ const GlobalProvider = ({ children }) => {
     dispatch({type: CLOSE_PLAYER});
   }
   // State App ---------->
-  const handleExplorer = () => {
-   setExplorer(!explorer)
+
+  // Get Audio Song
+
+  const getAudio = (id) => {
+    const audio = api.explorerList[4].content;
+    audio.forEach(song => {
+      song.id == id && dispatch({ type: GET_SONG, payload: song })
+    })
   }
-  const handleCalc = () => {
-    setCalc(!calc)
-  }
+ 
   // ------------------------------------>
-  const closeExplorer = () => {
-    setExplorer(false);
-  }
-  const closeCalc = () => {
-    setCalc(false);
-  }
-  // State Start Menu 
-  const toogleMenu = () => {
+  // Toggle Buttons
+  const toggleMenu = (event) => {
+    event.stopPropagation();
     dispatch({type: START_MENU});
   }
-  const outStartMenu = () => {
-    const os = document.querySelector('.os_system');
-    window.addEventListener('mousedown', e => {
-      if(e.target !== os && !os?.contains(e.target)) {
-        dispatch({type: OUT_START_MENU})
-      }
-    }) 
+  const toggleCalculator = (event) => {
+    event.stopPropagation();
+    dispatch({type: CALCULATOR});
+  }
+  const toggleExplorer = (event) => {
+    event.stopPropagation();
+    dispatch({type: EXPLORER});
   }
 
   const playerContext = {
@@ -99,21 +91,16 @@ const GlobalProvider = ({ children }) => {
     onPlay,
     onPause,
     autoPlay,
+    closePlayer,
     volume,
-    getAudio,
+    getAudio
   }
   const valueContext = {
     data: state.data,
-    toogleMenu,
-    outStartMenu,
+    toggleMenu,
+    toggleCalculator,
+    toggleExplorer,
     onToggle,
-    closePlayer,
-    closeExplorer,
-    closeCalc,
-    handleExplorer,
-    handleCalc,
-    explorer,
-    calc
   }
   const useRefContext = {
     appRef,

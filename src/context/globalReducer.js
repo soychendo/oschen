@@ -5,11 +5,13 @@ import {
   OFF_PLAYER, 
   START_MENU,
   OUT_START_MENU,
+  CALCULATOR,
+  EXPLORER,
 } from "@context/types";
 
-export const dataReducer = (state, action) => {
+export const globalReducer = (state, action) => {
   const { type, payload } = action;
-  const { activeMenu } = state;
+  const { activeMenu, calculator, explorer } = state;
 
   switch (type) {
     case GET_SONG:
@@ -43,6 +45,16 @@ export const dataReducer = (state, action) => {
         ...state,
         activeMenu: false
       }
+    case CALCULATOR:
+      return {
+        ...state,
+        calculator: !calculator
+      }  
+    case EXPLORER:
+      return {
+        ...state,
+        explorer: !explorer
+      } 
     default:
       return state;
   }

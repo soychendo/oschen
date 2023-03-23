@@ -5,10 +5,10 @@ import logoStartMenu from '@images/logo_win.svg'
 
 const Logo = () => {
 
-  const { toogleMenu } = useContext(GlobalContext)
+  const { toggleMenu } = useContext(GlobalContext)
 
   return (
-    <div onClick={toogleMenu} id="startmenu" className="hide_menu">
+    <div onClick={toggleMenu} id="startmenu" className="hide_menu">
       <img className="logo_win" src={logoStartMenu} alt="Start Menu" />
     </div>
   );

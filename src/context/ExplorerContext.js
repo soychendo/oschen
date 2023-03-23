@@ -1,29 +1,41 @@
-import React, { createContext, useEffect, useState } from 'react';
-import db from '../../database/db.json'
+import React, { createContext, useEffect, useReducer } from 'react';
+import { explorerReducer } from './explorerReducer';
+import api from '../../database/db.json'
+
+import { SELECT, SELECTED } from './types';
 
 const ExplorerContext = createContext();
 
 const ExplorerProvider = ({children}) => {
-  const [data, setData] = useState([]);
-  const [name, setName] = useState('Pc');
-  const [id, setId] = useState(1)
 
-  const handleId = ({id, name}) => {
-    setId(id)
-    setName(name)
+  const initialState = {
+    data: api.explorerList,
+    name: 'Home',
+    selected: 1,
+    detail: 'assets/explorer/pc.svg',
+    selectedContent: [],
   }
-  
-  useEffect(() => {
-    const updatedDataExplorer = () => {
-      const dataFilter = db.explorerList.filter(item => {
-        return item.explorerId === id;
-      })
-      setData(dataFilter)
-    }
-    updatedDataExplorer()
-  }, [id])
+  const [state, dispatch] = useReducer(explorerReducer, initialState);
 
-  const value = {handleId, data, name}
+  useEffect(() => {
+  
+    const selectedItem = state.data.find(item => item.explorerId === state.selected);
+
+    const selectedContent = selectedItem && selectedItem.content ? selectedItem.content : [];
+  
+    dispatch({type: SELECTED, payload: selectedContent});
+     
+  }, [state.selected]);
+
+  const select = ({ id, name, cover }) => {
+    dispatch({type: SELECT, payload: { id, name, cover }})
+  }
+
+  const value = { 
+    state, 
+    select,
+    selectedContent: state.selectedContent, 
+  }
 
   return (
     <ExplorerContext.Provider value={value}>

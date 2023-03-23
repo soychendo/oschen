@@ -1,6 +1,6 @@
 import React from "react";
 import ExplorerList from "../ExplorerList";
-import { ContainerExplorer } from "../ContainerExplorer";
+import { ContentExplorer } from "../ContentExplorer";
 import useMediaQuery from '@hooks/useMediaQuery';
 
 const MenuExplorer = () => {
@@ -9,7 +9,7 @@ const MenuExplorer = () => {
   return(
     <div id="ContentPc">
       {matches ? <ExplorerList /> : null}
-      <ContainerExplorer />
+      <ContentExplorer />
     </div>
   );
 }

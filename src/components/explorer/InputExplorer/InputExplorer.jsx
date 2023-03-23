@@ -7,16 +7,16 @@ import down from '@images/explorer/down.svg'
 import refresh from '@images/explorer/refresh.svg'
 
 const InputExplorer = () => {
-  const { name } = useContext(ExplorerContext)
-  const [input, setInput] = useState({valor: name})
+  const { state } = useContext(ExplorerContext)
+  const [input, setInput] = useState({valor: state.name})
 
   const handleChange = (event) => {
     const target = event.target;
     setInput({valor: target.value})
   }
   useEffect(() => {
-    setInput({valor: name})
-  },[name])
+    setInput({valor: state.name})
+  },[state.name])
 
   return (
     <div className="input_explorer">

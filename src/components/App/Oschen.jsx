@@ -1,32 +1,28 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import HeroImage from '@components/HeroImage/HeroImage';
 import Taskbar from '@containers/Taskbar_System/Taskbar';
-import Audio from '@components/explorer/Audio/Audio';
-
-import { Explorer } from '@containers/Explorer';
-import { GlobalContext } from '@context/GlobalContext';
-import { ExplorerProvider } from '@context/ExplorerContext';
 import OsMenu from '@components/OsMenu/OsMenu';
-
+import { ExplorerProvider } from '@context/ExplorerContext';
+import { GlobalProvider } from '@context/GlobalContext';
 import { contextMenuCustom } from '@utils/OsContextMenu';
-import Calc from '@containers/Calc/Calc';
+import { ContainerExplorer } from '@containers/Explorer';
+import { ContainerCalculator } from '@containers/Calc';
+import { ContainerAudio } from '@components/explorer/Audio';
 
 const Oschen = () => {
 
-  
-
-  const { explorer, state, calc } = useContext(GlobalContext);
-
   return (
     <div onLoad={contextMenuCustom} id="Oschen">
-      <ExplorerProvider>
-        { explorer ? <Explorer /> : null }
-      </ExplorerProvider>
-      <HeroImage />
-       { calc ? <Calc /> : null }
-      { state.activeSong ? <Audio /> : null }
-      <Taskbar /> 
-      <OsMenu />
+      <GlobalProvider>
+        <ExplorerProvider>
+          <ContainerExplorer />
+        </ExplorerProvider>
+        <HeroImage />
+        <ContainerCalculator />
+        <ContainerAudio />
+        <Taskbar /> 
+        <OsMenu />
+      </GlobalProvider> 
     </div>
   );
 }

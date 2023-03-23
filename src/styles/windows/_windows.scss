@@ -6,6 +6,14 @@ body {
     user-select: none;
     overflow: hidden;
 }
+::selection {
+    background: #f8aa013b;
+    color: #ccc;
+}
+::-moz-selection {
+    background: #f8aa013b;
+    color: #ccc;
+}
 #HeroImage img {
     position: relative;
     object-fit: cover;

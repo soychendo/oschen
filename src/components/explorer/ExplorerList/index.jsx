@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { ExplorerContext } from '@context/ExplorerContext';
+import React from 'react';
 import { ExplorerRoutes } from '../ExplorerRoutes';
 
 const ExplorerList = () => {

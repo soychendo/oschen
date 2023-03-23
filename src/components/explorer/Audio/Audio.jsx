@@ -1,15 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
 import OschenMouseDown, { touring } from '@utils/OschenMouseDown';
-
-import { useZindex } from '@hooks/useZindex';
 
 import close from '@images/pro/close.svg';
 
 const Audio = () => {
-
-  const ca = document.querySelector('.ca')
-  const { active, changeZindex } = useZindex(ca)
 
   const { 
     state,
@@ -26,20 +21,14 @@ const Audio = () => {
     OschenMouseDown(e, "audio");
     touring(".audio");
   }
-
-  useEffect(() => {
-    changeZindex()
-  }, [])
-
   return (
     <div
-    onMouseMove={changeZindex()}
     onMouseDown={(e) => handleContainer(e)}
     onLoad={() => onPlay()} 
     onEnded={autoPlay} 
     id="Audio"
     className="audio ca"
-    style={active}
+    // style={active}
     >
       <div className="mmc">
           <img onClick={() => closePlayer()} className="close" src={close} alt="close" />
@@ -69,7 +58,7 @@ const Audio = () => {
             >
                 <p className="AudioText">{state.selectedSong.name}</p>
             </marquee>
-            <audio ref={audioRef} src={`audio/${state.selectedSong.mp3}`}></audio>
+            <audio ref={audioRef} src={`${state.selectedSong.mp3}`}></audio>
             </>
           ) : (
             <p className="AudioText">Add To Song</p> 
@@ -99,4 +88,4 @@ const Audio = () => {
   );
 }
 
-export default Audio;
+export { Audio };

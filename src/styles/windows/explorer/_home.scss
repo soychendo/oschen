@@ -27,6 +27,9 @@
         list-style: none;
     }
 }
+.RoutesPc .selected {
+    background-color: $selectedId !important;
+}
 .RoutesPc li {
     padding: .2em .5em;
 
@@ -34,24 +37,20 @@
         background-color: $rgba_white2;
     }
 }
-.desktop, 
-.documents, 
-.downloads, 
-.music,
-.pictures,
-.videos,
-.chendo_disk,
-.chendo {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-}
 .ContainerPc {
     width: 100%;
     background-color: $container_pc;
     border-left: 1px solid $rgba_blue4;
     border-top: 1px solid $rgba_blue4;
     padding: 1em 0 .5em .5em;
+
+    .select {
+        background-color: $selectedId !important;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+    }
 
     img {
         width: 50px;
@@ -68,7 +67,7 @@
         border-left: none;
     }
 }
-#Pc {
+#Home {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     flex-wrap: inherit;
@@ -93,6 +92,13 @@
         }
     }
 }
+@media (max-width: 768px) {
+
+    #Home {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
 @media (max-width: 769px) {
     #Pc {
         grid-template-columns: repeat(4, 1fr);
@@ -109,16 +115,6 @@
     }
 }
 /* <---- Folder Default ----> */
-#desktop, 
-#documents, 
-#downloads, 
-#music,
-#pictures,
-#videos {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
 .align_items {
     display: flex;
     justify-content: flex-start;
@@ -140,15 +136,5 @@
         font-size: .8em;
     }
 }
-#music .align_items {
-    width: 70%;
-}
-@include m.tablet {
-    .align_items {
-        width: 97%;
-    }
-    #music .align_items {
-        width: 97%;
-    }
-}
+
 /* <---- End This Pc Explorer ----> */

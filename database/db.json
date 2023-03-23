@@ -2,7 +2,7 @@
   "explorer": [
     {
       "id": 1,
-      "name": "Pc",
+      "name": "Home",
       "cover": "assets/explorer/pc.svg"
     },
     {
@@ -40,6 +40,7 @@
     {
       "id": 24,
       "explorerId": 1,
+      "hasSongs": false,
       "content": [
         {
           "name": "Desktop",
@@ -70,6 +71,7 @@
     {
       "id": 19,
       "explorerId": 2,
+      "hasSongs": false,
       "content": [
         {
           "name": "ChendoDev",
@@ -100,6 +102,7 @@
     {
       "id": 17,
       "explorerId": 3,
+      "hasSongs": false,
       "content": [
         {
           "name": "Ethical Hacking",
@@ -130,6 +133,7 @@
     {
       "id": 24,
       "explorerId": 4,
+      "hasSongs": false,
       "content": [
         {
           "name": "Components Redux",
@@ -160,6 +164,7 @@
     {
       "id": 10,
       "explorerId": 5,
+      "hasSongs": true,
       "content": [
         {
           "id": 1,
@@ -186,28 +191,28 @@
           "id": 4,
           "name": "Foreigner | I Want to Know What Love Is",
           "src": "assets/content/doc_music.svg",
-          "album": "foreigner",
+          "album": "foreigner.jpg",
           "mp3": "audio/i-want-to.mp3"
         },
         {
           "id": 5,
           "name": "Tears In Heaven - Boyce Avenue",
           "src": "assets/content/doc_music.svg",
-          "album": "boyce-avenue",
+          "album": "boyce-avenue.jpg",
           "mp3": "audio/tears-in-heaven.mp3"
         },
         {
           "id": 6,
           "name": "Bee Gees - How Deep is Your Love",
           "src": "assets/content/doc_music.svg",
-          "album": "bee-gees",
+          "album": "bee-gees.jpg",
           "mp3": "audio/how-deep-is-your-love.mp3"
         },
         {
           "id": 7,
           "name": "AeroSmith - Crazy",
           "src": "assets/content/doc_music.svg",
-          "album": "aerosmith",
+          "album": "aerosmith.jpg",
           "mp3": "audio/crazy.mp3"
         }
       ]
@@ -215,6 +220,7 @@
     {
       "id": 15,
       "explorerId": 6,
+      "hasSongs": false,
       "content": [
         {
           "name": "Bruno Mars",
@@ -249,6 +255,7 @@
     {
       "id": 28,
       "explorerId": 7,
+      "hasSongs": false,
       "content": [
         {
           "name": "The Local Storage",
