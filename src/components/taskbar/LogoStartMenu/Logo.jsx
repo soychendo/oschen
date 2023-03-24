@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
 
-import logoStartMenu from '@images/logo_win.svg'
+import logo from '@public/favicon.svg'
 
 const Logo = () => {
 
@@ -9,7 +9,7 @@ const Logo = () => {
 
   return (
     <div onClick={toggleMenu} id="startmenu" className="hide_menu">
-      <img className="logo_win" src={logoStartMenu} alt="Start Menu" />
+      <img className="logo_win" src={logo} alt="Start Menu" />
     </div>
   );
 }

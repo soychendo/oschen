@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from 'react';
 import { useSelectNode } from '@hooks/useSelectNode';
-import { GlobalContext } from '../../../context/GlobalContext';
+import { GlobalContext } from '@context/GlobalContext';
 
 const Songs = ({ id, name, src }) => {
 

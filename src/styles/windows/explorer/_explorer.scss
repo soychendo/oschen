@@ -1,5 +1,4 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/*<----Init Explorer---->*/
+
 #Explorer {
     position: absolute;
     width: 550px;
@@ -27,6 +26,13 @@
         }
     }
 }
+.draggable.has-focus {
+    z-index: 100;
+  }
+  
+  .draggable {
+    z-index: 10;
+  }
 .container_explorer {
     position: relative;
     background-color: $rgba_gray7;
@@ -37,7 +43,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
-@include m.tablet {
+@media (max-width: 768px) {
     #Explorer {
         width: 300px;
         left: 50%;
@@ -48,4 +54,4 @@
     .container_explorer {
         width: 300px;
     }
-}
+}    

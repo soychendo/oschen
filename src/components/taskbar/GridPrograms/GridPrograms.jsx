@@ -13,14 +13,13 @@ const GridPrograms = () => {
     <div className="GridPrograms">
       {programs.map((icon, index) => (
       <React.Fragment key={icon.id}>
-      {icon.letter ? <span className="letter">{icon.letter}</span> : null}
-      <div ref={el => (con[index] = el)} onLoad={() => spotLight(app[index], con[index])} className="containerIcon">
-        <div ref={el => (app[index] = el)} className="box"></div>
-        <div className="icon_open">
-          <img src={`assets/pro/${icon.imagen}`} alt={icon.name} />
-          <span>{icon.name}</span>
+        <div ref={el => (con[index] = el)} onLoad={() => spotLight(app[index], con[index])} className="containerIcon">
+          <div ref={el => (app[index] = el)} className="box"></div>
+          <div className="icon_open">
+            <img src={`assets/pro/${icon.imagen}`} alt={icon.name} />
+            <span>{icon.name}</span>
+          </div>
         </div>
-      </div>
       </React.Fragment>
       ))}
     </div>

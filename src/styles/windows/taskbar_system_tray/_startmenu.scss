@@ -1,5 +1,4 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/* <---- Init Start Menu ----> */
+
 #StartMenu {
     backdrop-filter: blur(5px);
     background-color: $rgba_gray8;
@@ -17,14 +16,14 @@
         width: 620px;
         height: 420px;
     }
-    @include m.tablet {
+    @media (max-width: 768px) {
         .grid {
             display: grid;
             grid-template-columns: 1fr;
             width: 240px;
             height: 420px;
         }
-    };
+    }
 }
 /* <---- Grid User ---- > */
 .GridUser {
@@ -93,6 +92,7 @@
     padding-left: 2.5em;
     padding-right: .4em;
     overflow-y: auto;
+    margin-bottom: -1rem;
     .containerIcon {
         position: relative;
         line-height: 0;

@@ -1,5 +1,4 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/* <!---- Calculator Windows ----> */
+
 #chendo_calc {
     position: absolute;
     width: 300px;
@@ -8,11 +7,11 @@
     top: 50%;
     margin-top: -150px;
 }
-@include m.tablet {
+@media (max-width: 768px) {
     #chendo_calc {
         top: 25%;
     }
-}
+}    
 .calculators {
     background-color: $calc_rgba;
     box-shadow: 3px 3px 10px $rgba_black3;

@@ -1,8 +1,9 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/* <---- Menu Manage Explorer ----> */
+
 .menu_manage {
     background-color: $black;
-    @include m.displayFlex( space-between );
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
     width: 100%;
 }
 .menu_help {
@@ -27,7 +28,9 @@
 }
 .row_help {
     position: absolute;
-    @include m.displayFlex;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     right: .8em;
 
     img {

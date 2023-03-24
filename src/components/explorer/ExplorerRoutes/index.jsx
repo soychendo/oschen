@@ -1,13 +1,12 @@
 import React, { useContext, useCallback } from 'react';
-import db from '../../../../database/db.json';
-import { ExplorerContext } from '../../../context/ExplorerContext';
+import db from '@api/db.json';
+import { ExplorerContext } from '@context/ExplorerContext';
 
 const ExplorerRoutes = () => {
   const { state, select } = useContext(ExplorerContext);
   const { explorer } = db;
 
   const onclick = useCallback((list) => {
-    console.log('que pacha')
     select({...list});
   }, [state, select]);
 

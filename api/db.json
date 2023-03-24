@@ -44,27 +44,39 @@
       "content": [
         {
           "name": "Desktop",
-          "src": "assets/explorer/folder/desktop.svg"
+          "src": "assets/explorer/folder/desktop.svg",
+          "cover": "assets/explorer/desktop.svg",
+          "id": 2
         },
         {
           "name": "Documents",
-          "src": "assets/explorer/folder/documents.svg"
+          "src": "assets/explorer/folder/documents.svg",
+          "cover": "assets/explorer/documents.svg",
+          "id": 3
         },
         {
           "name": "Downloads",
-          "src": "assets/explorer/folder/downloads.svg"
+          "src": "assets/explorer/folder/downloads.svg",
+          "cover": "assets/explorer/downloads.svg",
+          "id": 4
         },
         {
           "name": "Music",
-          "src": "assets/explorer/folder/music.svg"
+          "src": "assets/explorer/folder/music.svg",
+          "cover": "assets/explorer/music.svg",
+          "id": 5
         },
         {
           "name": "Picture",
-          "src": "assets/explorer/folder/pictures.svg"
+          "src": "assets/explorer/folder/pictures.svg",
+          "cover": "assets/explorer/pictures.svg",
+          "id": 6
         },
         {
           "name": "Video",
-          "src": "assets/explorer/folder/video.svg"
+          "src": "assets/explorer/folder/video.svg",
+          "cover": "assets/explorer/video.svg",
+          "id": 7
         }
       ]
     },

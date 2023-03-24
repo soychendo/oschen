@@ -4,7 +4,7 @@ import {
   ON_PLAYER, 
   OFF_PLAYER, 
   START_MENU,
-  OUT_START_MENU,
+  MENU_OUTSIDE,
   CALCULATOR,
   EXPLORER,
 } from "@context/types";
@@ -40,7 +40,7 @@ export const globalReducer = (state, action) => {
         ...state,
         activeMenu: !activeMenu
       }
-    case OUT_START_MENU:
+    case MENU_OUTSIDE:
       return {
         ...state,
         activeMenu: false

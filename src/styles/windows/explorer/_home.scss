@@ -1,16 +1,16 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/* <---- This Pc Explorer ----> */
+
 #ContentPc {
     display: grid;
     grid-template-columns: 30% 70%;
     width: 100%;
     height: 250px;
 }
-@include m.tablet {
+@media (max-width: 768px) {
     #ContentPc {
         display: flex;
     }
 }
+
 .active {
     background-color: $active_pc;
 }
@@ -62,18 +62,19 @@
         }
     }
 }
-@include m.tablet {
+@media (max-width: 768px) {
     .ContainerPc {
         border-left: none;
     }
 }
+
 #Home {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     flex-wrap: inherit;
     width: 97%;
 
-    .align_items {
+    .Home {
 
         display: flex;
         flex-direction: column;
@@ -137,4 +138,9 @@
     }
 }
 
+@media (max-width: 768px) {
+    .align_items {
+        width: 90%;
+    }
+}
 /* <---- End This Pc Explorer ----> */

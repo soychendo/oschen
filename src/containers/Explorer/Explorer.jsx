@@ -1,36 +1,35 @@
-import React from 'react';
-import OschenMouseDown, { touring }  from '@utils/OschenMouseDown';
-
+import React, { useRef } from 'react';
 import DescriptionClose from '@components/explorer/DescriptionClose/DescriptionClose';
 import MenuManage from '@components/explorer/MenuManage/MenuManage';
 import InputExplorer from '@components/explorer/InputExplorer/InputExplorer';
 import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
-
-import { MenuExplorer } from '../../components/explorer/MenuExplorer';
+import { MenuExplorer } from '@components/explorer/MenuExplorer';
+import useDraggable from '@hooks/useDraggable';
+import { useZindex } from '../../../hooks/useZindex';
 
 const Explorer = () => {
-  
-  const handleContainer = (e) => {
-    OschenMouseDown(e, "container_explorer");
-    touring(".container_explorer");
-  }
 
+  const explorerRef = useRef(null);
+  const { zIndex } = useZindex(explorerRef);
+  useDraggable(explorerRef);
+  
   return (
     <>
-    <div 
-    onMouseDown={e => handleContainer(e)}
-    id="Explorer" 
-    data-id="1" 
-    className="explorer"
-    >
-    <div className="container_explorer ce">
-      <DescriptionClose />
-      <MenuManage />
-      <InputExplorer />
-      <MenuExplorer />
-      <ItemExplorer />
-    </div>
-    </div>
+      <div 
+        id="Explorer" 
+        ref={explorerRef}  
+        data-zindex="1" 
+        className="explorer"
+        style={{ zIndex: zIndex }}
+      >
+        <div tabIndex="0" className="container_explorer">
+          <DescriptionClose />
+          <MenuManage />
+          <InputExplorer />
+          <MenuExplorer />
+          <ItemExplorer />
+        </div>
+      </div>
     </>
   );
 }

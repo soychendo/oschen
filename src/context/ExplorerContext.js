@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useReducer } from 'react';
 import { explorerReducer } from './explorerReducer';
-import api from '../../database/db.json'
+import api from '@api/db.json'
 
 import { SELECT, SELECTED } from './types';
 

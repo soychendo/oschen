@@ -1,7 +1,8 @@
-@use '../../base/mixins' as m; // Import Mixins 
-/* <---- Logo Windows & Start Menu ----> */
+
 #startmenu {
-  @include m.displayFlex;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   margin-left: 0;
 
     &:hover {

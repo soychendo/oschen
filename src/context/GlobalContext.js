@@ -1,6 +1,6 @@
-import React, {createContext, useReducer, useRef} from 'react';
+import React, {createContext, useEffect, useReducer, useRef} from 'react';
 import { globalReducer } from '@context/globalReducer';
-import api from '../../database/db.json';
+import api from '@api/db.json';
 
 import { 
   CLOSE_PLAYER, 
@@ -8,6 +8,7 @@ import {
   GET_SONG,
   OFF_PLAYER,
   START_MENU,
+  MENU_OUTSIDE,
   CALCULATOR,
   EXPLORER
 } from '@context/types';
@@ -29,6 +30,8 @@ const GlobalProvider = ({ children }) => {
   // Grid Programs ---->
   const appRef = useRef([]);
   const containerRef = useRef([]);
+  const menuRef = useRef(null)
+  const sidebarRef = useRef(null)
 
   const audioRef = useRef();
 
@@ -70,8 +73,27 @@ const GlobalProvider = ({ children }) => {
       song.id == id && dispatch({ type: GET_SONG, payload: song })
     })
   }
+  // Focus Out Start Menu
+  useEffect(() => {
+    const handleMenuOutside = (event) => {
+      if(menuRef.current && !menuRef.current.contains(event.target) && 
+      sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        dispatch({type: MENU_OUTSIDE})
+      }
+    }
+    document.addEventListener('mousedown', handleMenuOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleMenuOutside)
+    }
+  }, [menuRef])
  
   // ------------------------------------>
+
+  // Action Open Explorer Calculator
+  const closeMenu = () => {
+    dispatch({type: MENU_OUTSIDE})
+  }
   // Toggle Buttons
   const toggleMenu = (event) => {
     event.stopPropagation();
@@ -80,10 +102,12 @@ const GlobalProvider = ({ children }) => {
   const toggleCalculator = (event) => {
     event.stopPropagation();
     dispatch({type: CALCULATOR});
+    closeMenu();
   }
   const toggleExplorer = (event) => {
     event.stopPropagation();
     dispatch({type: EXPLORER});
+    closeMenu();
   }
 
   const playerContext = {
@@ -105,7 +129,9 @@ const GlobalProvider = ({ children }) => {
   const useRefContext = {
     appRef,
     containerRef,
-    audioRef
+    audioRef,
+    menuRef,
+    sidebarRef
   }
   const globalContext = {
     ...playerContext,

@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useRef } from "react";
 import { GlobalContext } from "@context/GlobalContext";
-import OschenMouseDown, { touring }  from '@utils/OschenMouseDown';
 import { useZindex } from '@hooks/useZindex';
-
+import useDraggable from '@hooks/useDraggable';
 import minimize from "@images/pro/minimize.svg";
 import maximize from "@images/pro/maximize.svg";
 import close from "@images/pro/close.svg";
@@ -10,35 +9,26 @@ import start from "@images/ism/start.svg";
 
 const Calc = () => {
 
-  const { closeCalc } = useContext(GlobalContext);
-
-  const ca = document.querySelector('.calculators');
-  const { active, changeZindex } = useZindex(ca)
-
-  const handleContainer = (e) => {
-    OschenMouseDown(e, "calculators");
-    touring(".calculators");
-  }
-
-  useEffect(() => {
-    changeZindex()
-  }, [])
+  const calcRef = useRef(null);
+  const { zIndex } = useZindex(calcRef);
+  const { toggleCalculator } = useContext(GlobalContext)
+  useDraggable(calcRef);
 
   return(
     <div
-      onMouseDown={e => handleContainer(e)} 
       id="chendo_calc" 
-      data-id="2" 
+      data-zindex="2" 
       className="chendo_calc"
-      style={active}
+      ref={calcRef}
+      style={{ zIndex: zIndex }}
     >
-      <div onMouseDown={changeZindex} className="calculators" >
+      <div className="calculators">
         <div className="head"></div>
         <h1>Calculator</h1>
         <div className="mmc">
           <img className="minimize" src={minimize} alt="minimize" />
           <img className="maximize" src={maximize} alt="maximize" />
-          <img onClick={closeCalc} className="close" src={close} alt="close" />
+          <img onClick={toggleCalculator} className="close" src={close} alt="close" />
         </div>
         <div className="menu_calc">
           <img src={start} alt="Menu items" />

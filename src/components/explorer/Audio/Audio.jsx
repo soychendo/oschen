@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
-import OschenMouseDown, { touring } from '@utils/OschenMouseDown';
-
+import useDraggable from '@hooks/useDraggable';
 import close from '@images/pro/close.svg';
 
 const Audio = () => {
@@ -16,19 +15,16 @@ const Audio = () => {
     volume,
 
   } = useContext(GlobalContext);
+  const containerAudioRef = useRef(containerAudioRef);
+  useDraggable(containerAudioRef);
 
-  const handleContainer = (e) => {
-    OschenMouseDown(e, "audio");
-    touring(".audio");
-  }
   return (
     <div
-    onMouseDown={(e) => handleContainer(e)}
+    ref={containerAudioRef}
     onLoad={() => onPlay()} 
     onEnded={autoPlay} 
     id="Audio"
-    className="audio ca"
-    // style={active}
+    className="audio"
     >
       <div className="mmc">
           <img onClick={() => closePlayer()} className="close" src={close} alt="close" />

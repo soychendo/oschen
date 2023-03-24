@@ -25,6 +25,7 @@ module.exports = {
       '@components': path.resolve(__dirname, './src/components/'),
       '@containers': path.resolve(__dirname, './src/containers/'),
       '@database': path.resolve(__dirname, './public/database/'),
+      '@api': path.resolve(__dirname, './api'),
       '@utils': path.resolve(__dirname, './src/utils/'),
       '@context': path.resolve(__dirname, './src/context/')
     }
@@ -66,8 +67,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
           {
-              from: path.resolve(__dirname, "public", "assets"),
-              to: "assets"
+            from: path.resolve(__dirname, "public", "assets"),
+            to: "assets"
           },
           {
             from: path.resolve(__dirname, "public", "audio"),

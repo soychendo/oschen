@@ -17,9 +17,11 @@
             font-size: .7em;
         }
     }
-    @include m.tablet {
+    @media (max-width: 768px) {
         .systems {
-            @include m.displayFlex(flex-end);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             padding-right: 1em;
         }
     }

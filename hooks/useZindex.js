@@ -10,27 +10,33 @@
     Website: https://chendo.dev
 
 -----------------------------------------------------------------------------------*/
-import { useState } from "react";
-const  useZindex = (container) => {
+import { useState, useEffect } from 'react';
 
-  const [index, setIndex] = useState(false);
-  
-  const changeZindex = () => {
-  window.addEventListener('mousedown', e => {
-    if(e.target !== container && !container?.contains(e.target)) {
-      setIndex(false)
-    } else {
-      setIndex(true)
-    }
-    })
-  }
-  const active = {
-    zIndex: index ? "7" : "0"
-  }
+const useZindex = (containerRef) => {
+  const [isActive, setIsActive] = useState(false);
 
-  return {
-    changeZindex,
-    active
-  };
-}
+  useEffect(() => {
+    const handleClick = (event) => {
+      const clickedElement = event.target;
+      const containerElement = containerRef.current;
+      
+      if (clickedElement !== containerElement && !containerElement.contains(clickedElement)) {
+        setIsActive(false);
+      } else {
+        setIsActive(true);
+      }
+    };
+
+    window.addEventListener('mousedown', handleClick);
+
+    return () => {
+      window.removeEventListener('mousedown', handleClick);
+    };
+  }, [containerRef]);
+
+  const zIndex = isActive ? 7 : 0;
+
+  return { zIndex };
+};
+
 export {useZindex};
