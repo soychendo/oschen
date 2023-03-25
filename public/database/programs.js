@@ -1,9 +1,7 @@
 
 const programs = [
-  { "name": "Chendo Dev", "imagen": "folder.svg", "id": "8"},
+  { "name": "Chendo", "imagen": "explorer.svg", "id": "8"},
 
-  { "name": "Adobe Illustrator 2021", "imagen": "ai.svg", "id": "1"},
-  { "name": "Adobe Photoshop 2021", "imagen": "ps.svg", "id": "2"},
   { "name": "Alarms & Clock", "imagen": "alarm.svg", "id": "3"},
 
   { "name": "Calculator v.01", "imagen": "calculator.svg", "id": "4"},
@@ -14,7 +12,7 @@ const programs = [
 
   { "name": "Google Chrome", "imagen": "chrome.svg", "id": "10" },
 
-  { "name": "Mail", "imagen": "contact.svg", "id": "11" },
+  { "name": "Mail", "href": "mailto:chendodev@gmail.com", "imagen": "contact.svg", "id": "11" },
   { "name": "Maps", "imagen": "maps.svg", "id": "12" },
 
 ]

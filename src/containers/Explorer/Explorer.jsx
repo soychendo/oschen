@@ -5,7 +5,7 @@ import InputExplorer from '@components/explorer/InputExplorer/InputExplorer';
 import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
 import { MenuExplorer } from '@components/explorer/MenuExplorer';
 import useDraggable from '@hooks/useDraggable';
-import { useZindex } from '../../../hooks/useZindex';
+import { useZindex } from '@hooks/useZindex';
 
 const Explorer = () => {
 
@@ -22,7 +22,7 @@ const Explorer = () => {
         className="explorer"
         style={{ zIndex: zIndex }}
       >
-        <div tabIndex="0" className="container_explorer">
+        <div className="container_explorer ca">
           <DescriptionClose />
           <MenuManage />
           <InputExplorer />

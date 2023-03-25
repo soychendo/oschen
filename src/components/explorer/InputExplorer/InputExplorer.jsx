@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ExplorerContext } from '@context/ExplorerContext';
-
-import arrowRight from '@images/explorer/arrow_right.svg'
-import arrowLeft from '@images/explorer/arrow_left.svg'
 import down from '@images/explorer/down.svg'
 import refresh from '@images/explorer/refresh.svg'
+import { Arrow } from './Arrow';
 
 const InputExplorer = () => {
-  const { state } = useContext(ExplorerContext)
+  const { state, goBack } = useContext(ExplorerContext)
   const [input, setInput] = useState({valor: state.name})
 
   const handleChange = (event) => {
@@ -20,16 +18,15 @@ const InputExplorer = () => {
 
   return (
     <div className="input_explorer">
-      <div className="arrows">
-        <img src={arrowRight} alt="right" />
-        <img src={arrowLeft} alt="left" />
+      <div onClick={goBack} className="arrows">
+        <Arrow />
       </div>
       <div className="pc_information">
         <input 
           type="text" 
           name='valor' 
           autoComplete='off'
-          value={input.valor} 
+          value={input.valor || ''} 
           onChange={(e) => handleChange(e)} 
         />
         <div className="arrow_refresh">

@@ -1,31 +1,39 @@
 
 #StartMenu {
-    backdrop-filter: blur(5px);
-    background-color: $rgba_gray8;
-    box-shadow: $box-shadow;
+    backdrop-filter: blur(12px);
+    background-color: rgba(26, 26, 26, 0.4);
+    box-shadow: 3px 0 10px 3px hsla(0, 0%, 10%, 50%);
+    transition: all 300ms ease, backdrop-filter 1ms;
+    transition-timing-function: cubic-bezier(0.15, 1, 0.5, 1);
     position: absolute;
     bottom: 0;
     left: 0;
     margin-bottom: 1.7em;
-    padding: 1em;
     z-index: 7;
+
+    // @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    //     background-color: hsla(0, 0%, 13%, 70%);
+    // }
 
     .grid {
         display: grid;
-        grid-template-columns: 50% 50%;
-        width: 620px;
-        height: 420px;
-    }
-    @media (max-width: 768px) {
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            width: 240px;
-            height: 420px;
-        }
+        grid-template-columns: 100%;
+        width: 300px;
+        height: 320px;
+        margin-bottom: 1rem;
     }
 }
 /* <---- Grid User ---- > */
+.grid-blur {
+    backdrop-filter: blur(5px);
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background: rgba(26, 26, 26, 0.345);
+    right: 0;
+    left: 0;
+}
 .GridUser {
     display: flex;
     flex-direction: column;
@@ -89,10 +97,18 @@
 /* <---- Grid Programs ---- > */
 .GridPrograms {
     width: 100%;
-    padding-left: 2.5em;
+    padding-left: 3.3em;
     padding-right: .4em;
     overflow-y: auto;
     margin-bottom: -1rem;
+    backdrop-filter: blur(12px);
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        cursor: default;
+    }
+
     .containerIcon {
         position: relative;
         line-height: 0;
@@ -117,6 +133,7 @@
     }
     .icon_open span {
         font-size: .7em;
+        backdrop-filter: blur(12px);
     }
     .box {
         position: absolute;
@@ -145,6 +162,9 @@
     grid-template-columns: repeat(3, 1fr);
     height: fit-content;
     padding-left: .4em;
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+    height: 100%;
 
     img {
         width: 45px;

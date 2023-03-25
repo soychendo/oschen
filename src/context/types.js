@@ -10,3 +10,4 @@ export const EXPLORER = 'EXPLORER';
 
 export const SELECT = 'SELECT';
 export const SELECTED = 'SELECTED';
+export const GO_BACK = 'GO_BACK';

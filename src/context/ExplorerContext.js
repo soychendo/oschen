@@ -2,19 +2,27 @@ import React, { createContext, useEffect, useReducer } from 'react';
 import { explorerReducer } from './explorerReducer';
 import api from '@api/db.json'
 
-import { SELECT, SELECTED } from './types';
+import { 
+  SELECT, 
+  SELECTED, 
+  GO_BACK,
+} from './types';
 
 const ExplorerContext = createContext();
 
 const ExplorerProvider = ({children}) => {
 
   const initialState = {
+
     data: api.explorerList,
     name: 'Home',
     selected: 1,
     detail: 'assets/explorer/pc.svg',
     selectedContent: [],
+    previous: null,
+
   }
+
   const [state, dispatch] = useReducer(explorerReducer, initialState);
 
   useEffect(() => {
@@ -26,14 +34,19 @@ const ExplorerProvider = ({children}) => {
     dispatch({type: SELECTED, payload: selectedContent});
      
   }, [state.selected]);
-
+ 
   const select = ({ id, name, cover }) => {
-    dispatch({type: SELECT, payload: { id, name, cover }})
-  }
+    dispatch({type: SELECT, payload: { id, name, cover }});
+  };
+
+  const goBack = () => {
+    dispatch({ type: GO_BACK });
+  };
 
   const value = { 
     state, 
     select,
+    goBack,
     selectedContent: state.selectedContent, 
   }
 

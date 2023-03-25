@@ -37,7 +37,7 @@ const useDraggable = (targetRef) => {
     };
 
     target.addEventListener("mousedown", handleDown);
-    target.addEventListener("touchstart", handleDown);
+    target.addEventListener("touchstart", handleDown, { passive: false } );
     target.addEventListener("mouseup", handleUp);
     target.addEventListener("touchend", handleUp);
 

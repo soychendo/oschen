@@ -8,7 +8,7 @@ const MenuManage = () => {
       <ul className="menu_help">
         <li>File</li>
         <li>Computer</li>
-        <li>View</li>
+        <li>Menu</li>
       </ul>
       <div className="row_help">
         <img src={down} alt="row" />

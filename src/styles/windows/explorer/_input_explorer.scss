@@ -22,17 +22,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: .5em;
+    gap: 0.7rem;
 
     img {
-        padding: 0 0.01em 0 0.3em;;
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
     }
 }
 .pc_information {
     position: relative;
-    padding-left: .3em;
+    padding-left: .7em;
     width: 100%;
 
     img {
