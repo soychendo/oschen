@@ -20,7 +20,8 @@ const ExplorerProvider = ({children}) => {
     detail: 'assets/explorer/pc.svg',
     selectedContent: [],
     previous: null,
-
+    stack: [{ id: 1, name: 'Home', cover: 'assets/explorer/pc.svg' }], // Add the default values to the start of the array
+    selectionHistory: [1],
   }
 
   const [state, dispatch] = useReducer(explorerReducer, initialState);
@@ -32,7 +33,7 @@ const ExplorerProvider = ({children}) => {
     const selectedContent = selectedItem && selectedItem.content ? selectedItem.content : [];
   
     dispatch({type: SELECTED, payload: selectedContent});
-     
+     console.log(state.stack)
   }, [state.selected]);
  
   const select = ({ id, name, cover }) => {
@@ -40,7 +41,9 @@ const ExplorerProvider = ({children}) => {
   };
 
   const goBack = () => {
-    dispatch({ type: GO_BACK });
+    if (state.selectionHistory.length > 1) { 
+      dispatch({ type: GO_BACK });
+    }
   };
 
   const value = { 
