@@ -1,11 +1,11 @@
-import React from "react";
-import useMediaQuery from '@hooks/useMediaQuery';
+import React, { useContext } from "react";
+import { ExplorerContext } from '@context/ExplorerContext';
+import { DEFAULT_EXPLORER } from "@utils/constants";
 
 export const Arrow = () => {
 
-  const matches = useMediaQuery('(max-width: 768px)');
-
-  const color = matches ? '#eb892d' : '#aaa';
+  const { state } = useContext(ExplorerContext)
+  const color = state.stack.length > DEFAULT_EXPLORER ? '#eb892d' : '#aaa';
 
   return (
     <svg 

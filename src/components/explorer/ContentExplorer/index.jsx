@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ExplorerContext } from "@context/ExplorerContext";
+import { DEFAULT_EXPLORER } from "@utils/constants";
 import ExplorerInfo from "../ExplorerInfo";
 import { Songs } from '../ExplorerInfo/Songs';
 import { Home } from "../Home";
@@ -7,10 +8,8 @@ import { Home } from "../Home";
 const ContentExplorer = () => {
   const { selectedContent, state } = useContext(ExplorerContext);
 
-  const INITIAL = 1
-
   const getExplorerComponent = (item) => {
-    if(state.selected == INITIAL) {
+    if(state.selected == DEFAULT_EXPLORER) {
       return <Home key={item.name} {...item} />;
     }
     if (item.id !== undefined) {
