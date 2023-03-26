@@ -33,7 +33,7 @@ const ExplorerProvider = ({children}) => {
     const selectedContent = selectedItem && selectedItem.content ? selectedItem.content : [];
   
     dispatch({type: SELECTED, payload: selectedContent});
-     console.log(state.stack)
+
   }, [state.selected]);
  
   const select = ({ id, name, cover }) => {

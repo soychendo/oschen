@@ -2,7 +2,7 @@
 #StartMenu {
     backdrop-filter: blur(12px);
     background-color: rgba(26, 26, 26, 0.4);
-    box-shadow: 3px 0 10px 3px hsla(0, 0%, 10%, 50%);
+    box-shadow: 1px 0 10px 1px hsla(0, 0%, 10%, 50%);
     transition: all 300ms ease, backdrop-filter 1ms;
     transition-timing-function: cubic-bezier(0.15, 1, 0.5, 1);
     position: absolute;
@@ -11,9 +11,9 @@
     margin-bottom: 1.7em;
     z-index: 7;
 
-    // @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    //     background-color: hsla(0, 0%, 13%, 70%);
-    // }
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        background-color: rgba(26, 26, 26, 0.4);
+    }
 
     .grid {
         display: grid;
