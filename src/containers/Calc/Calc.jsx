@@ -12,7 +12,7 @@ const Calc = () => {
   const calcRef = useRef(null);
   const { zIndex } = useZindex(calcRef);
   const { toggleCalculator } = useContext(GlobalContext)
-  useDraggable(calcRef);
+  useDraggable(calcRef, 'isDragCalc');
 
   return(
     <div
@@ -22,6 +22,7 @@ const Calc = () => {
       ref={calcRef}
       style={{ zIndex: zIndex }}
     >
+      <div className="isDragCalc"></div>
       <div className="calculators">
         <div className="head"></div>
         <h1>Calculator</h1>

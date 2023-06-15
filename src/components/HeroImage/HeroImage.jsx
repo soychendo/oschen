@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '@public/windows.jpg'
+import heroImage from '@public/windows.webp'
 
 const HeroImage = ({toggleOutMenu}) => {
   return (

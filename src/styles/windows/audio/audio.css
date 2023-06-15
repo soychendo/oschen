@@ -13,11 +13,18 @@
   width: 350px;
   height: 100px;
 }
+.isDragSong {
+  position: absolute;
+  width: calc(100% - 120px);
+  height: 100%;
+  z-index: -1;
+}
 .AudioContainer {
   position: relative;
   overflow: hidden;
   width: 100px;
   height: 100%;
+  z-index: -2;
 }
 .AudioDescription {
   display: flex;

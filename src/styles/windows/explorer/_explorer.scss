@@ -7,6 +7,14 @@
     top: 50%;
     margin-top: -275px;
 
+    .isDrag {
+        position: absolute;
+        top: 0;
+        width: calc(100% - 120px);
+        height: 30px;
+        z-index: 10;
+    }
+
     li img {
         width: 17px;
         height: 17px;

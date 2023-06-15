@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useDraggable = (targetRef) => {
+const useDraggable = (targetRef, targetAllowed) => {
   useEffect(() => {
     const target = targetRef.current;
 
@@ -26,6 +26,10 @@ const useDraggable = (targetRef) => {
       const startEvent = e.type === "mousedown" ? e : e.touches[0];
       prevX = startEvent.clientX;
       prevY = startEvent.clientY;
+
+      if (!startEvent.target.classList.contains(targetAllowed)) {
+        return;
+      }
 
       window.addEventListener("mousemove", handleMove);
       window.addEventListener("touchmove", handleMove, { passive: false });

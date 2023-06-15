@@ -11,7 +11,7 @@ const Explorer = () => {
 
   const explorerRef = useRef(null);
   const { zIndex } = useZindex(explorerRef);
-  useDraggable(explorerRef);
+  useDraggable(explorerRef, 'isDrag');
   
   return (
     <>
@@ -22,6 +22,7 @@ const Explorer = () => {
         className="explorer"
         style={{ zIndex: zIndex }}
       >
+        <div className='isDrag'></div>
         <div className="container_explorer ca">
           <DescriptionClose />
           <MenuManage />

@@ -16,7 +16,7 @@ const Audio = () => {
 
   } = useContext(GlobalContext);
   const containerAudioRef = useRef(containerAudioRef);
-  useDraggable(containerAudioRef);
+  useDraggable(containerAudioRef, 'isDragSong');
 
   return (
     <div
@@ -26,6 +26,7 @@ const Audio = () => {
     id="Audio"
     className="audio"
     >
+      <div className='isDragSong'></div>
       <div className="mmc">
           <img onClick={() => closePlayer()} className="close" src={close} alt="close" />
       </div>

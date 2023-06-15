@@ -6,6 +6,13 @@
     margin-left: -150px;
     top: 50%;
     margin-top: -150px;
+    .isDragCalc {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 30px;
+        z-index: 7;
+    }
 }
 @media (max-width: 768px) {
     #chendo_calc {
