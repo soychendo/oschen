@@ -19,10 +19,17 @@
         user-select: text;
     }
 }
+@media (min-width: 768px) {
+    .arrows {
+        display: inline;
+        margin-left: 40px;
+    }
+}   
 .arrows {
-    display: inline;
-    margin-left: 14px;
+    margin-left: 0;
 }
+ 
+
 .pc_information {
     position: relative;
     padding-left: .7em;

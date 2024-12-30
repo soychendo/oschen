@@ -2,7 +2,7 @@
   "name": "oschen",
   "version": "1.1.0",
   "homepage": "https://oschen.github.io",
-  "description": "Oschen | @chendodev",
+  "description": "Oschen | @soychendo",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build && echo oschen.github.io > ./build/CNAME",

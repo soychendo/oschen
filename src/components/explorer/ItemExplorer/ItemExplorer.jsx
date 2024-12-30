@@ -8,7 +8,7 @@ const ItemExplorer = () => {
   return (
     <div className="items_explorer">
       <span>{items}</span>
-      <a href='https://chendo.dev' target="_blank">chendodev</a>
+      <a href='https://github.com/soychendo' target="_blank">soychendo</a>
     </div>
   );
 }
